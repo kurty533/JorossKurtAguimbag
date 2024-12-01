@@ -1,80 +1,3 @@
-<?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Database connection details
-$servername = "localhost";
-$username = "root"; // Replace with your database username
-$password = "";     // Replace with your database password
-$dbname = "portal"; // Replace with your database name
-
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $email = trim($_POST['Email']);
-    $password = trim($_POST['password']);
-
-    // Validation
-    if (empty($email) || empty($password)) {
-        echo "<script>
-            alert('Please fill in both email and password.');
-            window.history.back();
-        </script>";
-        exit();
-    }
-
-    // Prepare a query to check user credentials
-    $query = "SELECT id, first_name, last_name, password FROM users WHERE email = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Check if the user exists
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        // Verify the password
-        if (password_verify($password, $user['password'])) {
-            // Successful login
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['first_name'] . " " . $user['last_name'];
-            echo "<script>
-                alert('Login successful! Redirecting to the portal.');
-                window.location.href = 'index.html'; // Replace with your dashboard file
-            </script>";
-        } else {
-            // Invalid password
-            echo "<script>
-                alert('Incorrect password. Please try again.');
-                window.history.back();
-            </script>";
-        }
-    } else {
-        // User not found
-        echo "<script>
-            alert('Email not registered.');
-            window.history.back();
-        </script>";
-    }
-
-    $stmt->close();
-}
-
-$conn->close();
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,5 +112,84 @@ $conn->close();
             Note: Your default password is your surname in lowercase.
         </div>
     </div>
+
+    <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database connection details
+$servername = "localhost";
+$username = "root"; // Replace with your database username
+$password = "";     // Replace with your database password
+$dbname = "portal"; // Replace with your database name
+
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $email = trim($_POST['Email']);
+    $password = trim($_POST['password']);
+
+    // Validation
+    if (empty($email) || empty($password)) {
+        echo "<script>
+            alert('Please fill in both email and password.');
+            window.history.back();
+        </script>";
+        exit();
+    }
+
+    // Prepare a query to check user credentials
+    $query = "SELECT id, first_name, last_name, password FROM users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Check if the user exists
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        // Verify the password
+        if (password_verify($password, $user['password'])) {
+            // Successful login
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['first_name'] . " " . $user['last_name'];
+            echo "<script>
+                alert('Login successful! Redirecting to the portal.');
+                window.location.href = 'index.html'; // Replace with your dashboard file
+            </script>";
+        } else {
+            // Invalid password
+            echo "<script>
+                alert('Incorrect password. Please try again.');
+                window.history.back();
+            </script>";
+        }
+    } else {
+        // User not found
+        echo "<script>
+            alert('Email not registered.');
+            window.history.back();
+        </script>";
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
+
+
+
+
 </body>
 </html>
