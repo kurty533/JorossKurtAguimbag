@@ -1,0 +1,269 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+        <style>
+            /* Custom Styles */
+            .hero {
+                background: url(images/bg.jpg) no-repeat center center;
+                background-size: cover;
+                height: 70vh;
+                color: white;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        
+            .navbar-brand {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        
+            .navbar-nav .nav-link {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            
+            /* Transparent navbar when at the top */
+            .navbar {
+                background-color: transparent !important;
+                box-shadow: none; /* Optional: remove shadow for a clean look */
+            }
+
+            /* Solid navbar when scrolling down */
+            .navbar.scrolled {
+                background-color: #343a40 !important; /* Example: solid background color */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            }
+
+            /* Adjust text color for navbar */
+            .navbar-brand, .navbar-nav .nav-link {
+                color: white !important; /* Ensure the text is visible against the background */
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #f8f9fa !important; /* Optional: Change link color on hover */
+            }
+
+            /* Button Style: Transparent with hover effect */
+        .btn-transparent {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-transparent:hover {
+            background-color: #d40303;
+            color: white;
+            border-color: red;
+        }
+
+            .hero h1 {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            .hero .btn {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 1.2rem;
+            }
+        
+            .container {
+                margin-top: 10px;
+            }
+
+        /* About Section */
+            .about-section {
+                background-color: #f8f9fa;
+                padding: 60px 0;
+            }
+
+            .about-section h2 {
+                font-size: 2.5rem;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+
+            .about-section p {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                text-align: left;
+            }
+
+            .about-section img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .swiper-slide img {
+            width: 200px; /* Fixed width */
+            height: 300px; /* Fixed height */
+            object-fit: cover; /* Ensures the image fills the space, cropping if needed */
+            }
+
+
+            .petition-form {
+                background-color: #f8f9fa;
+                padding: 40px 0;
+                margin-top: 30px;
+            }
+        
+            .petition-form h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .progress {
+                height: 20px;
+                border-radius: 10px;
+            }
+
+            .progress-bar {
+                font-weight: bold;
+                line-height: 20px;
+            }
+
+        
+            footer {
+                background-color: #343a40;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><strong>Student Portal</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            // Add a scroll event listener
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <h1>Want To Be Part Of Us?</h1>
+        </section>
+
+            <!-- About Section -->
+        <section class="about-section">
+        <div class="container text-center">
+        <h2 class="text-center">Who We Are</h2>
+        <hr>
+        <p class="text-center">
+            At <strong>ISCC</strong>, we are dedicated to providing a dynamic and innovative learning environment that fosters academic excellence and prepares students for the fast-evolving fields of computer science and communications. Our school is committed to equipping students with the skills and knowledge needed to succeed in a technology-driven world. With a strong emphasis on hands-on learning, collaboration, and critical thinking, we strive to cultivate a community of passionate learners ready to tackle the challenges of the digital age.
+        </p>
+        <p class="text-center">
+            Founded by passionate advocates for change, our movement brings together individuals from diverse backgrounds to fight for universal human rights. Whether it's advocating for freedom of speech, combating discrimination, or protecting vulnerable communities, we believe in the power of unity to create meaningful impact.
+        </p>
+        </div>
+        <h2 class="text-center mb-4">MORE RESOURCES</h2>
+        <hr>
+
+        <!-- Image Row -->
+        <div class="row mt-4">
+            <div class="col-md-3 col-sm-6">
+                <img src="images/librs.jpg" alt="Library Access" class="img-fluid rounded">
+                <p>Access to library resources</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="images/comm.jpg" alt="Computer Lab Access" class="img-fluid rounded">
+                <p>Computer lab access for academic use</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="images/online.jpg" alt="Online Tutorials" class="img-fluid rounded">
+                <p>Explore online tutorials and resources</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <img src="images/event.jpg" alt="Events and Activities" class="img-fluid rounded">
+                <p>Join events and activities for growth</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Events Section -->
+   <section class="events-section py-5" style="background-color: #f1f1f1;">
+    <div class="container">
+        <h2 class="text-center mb-4">Upcoming Events</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/event.jpg" class="card-img-top" alt="Event 1">
+                    <div class="card-body">
+                        <h5 class="card-title">IT Week</h5>
+                        <p class="card-text">Join us for a week of fun activities to kick off the semester!</p>
+                        <p class="text-muted">Date: January 10, 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/rec.jpg" class="card-img-top" alt="Event 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Recognition Day</h5>
+                        <p class="card-text">Clinical Graduation Rites and Recognition Day.</p>
+                        <p class="text-muted">Date: February 5, 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="images/educ.jpg" class="card-img-top" alt="Event 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Parade</h5>
+                        <p class="card-text">The Provincial Government of Ilocos Sur conducted a celebratory motorcade</p>
+                        <p class="text-muted">Date: March 12, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Stand for Human Rights. All Rights Reserved.</p>
+    </footer>
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    </body>
+    </html>

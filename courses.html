@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles */
+        .hero {
+            background: url(images/bg.jpg) no-repeat center center;
+            background-size: cover;
+            height: 70vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .navbar-brand {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        
+            .navbar-nav .nav-link {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            
+            /* Transparent navbar when at the top */
+            .navbar {
+                background-color: transparent !important;
+                box-shadow: none; /* Optional: remove shadow for a clean look */
+            }
+
+            /* Solid navbar when scrolling down */
+            .navbar.scrolled {
+                background-color: #343a40 !important; /* Example: solid background color */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow */
+            }
+
+            /* Adjust text color for navbar */
+            .navbar-brand, .navbar-nav .nav-link {
+                color: white !important; /* Ensure the text is visible against the background */
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #f8f9fa !important; /* Optional: Change link color on hover */
+            }
+
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .petition-form {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .petition-form input,
+        .petition-form textarea {
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .petition-form button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .progress-section h4 {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><strong>Student Portal</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>ISCC'IAN</h1>
+    </section>
+
+        <!-- News Section -->
+<section id="news" class="news-section">
+    <div class="container">
+        <br>
+        <h2 class="text-center mb-4">MORE COURSES</h2>
+        <hr>
+        <div class="row">
+            <!-- News Item 1 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="images/mid.jpg" class="card-img-top" alt="News 1">
+                    <div class="card-body">
+                        <h5 class="card-title">MID WIFERY</h5>
+                        <p class="card-text">
+                            Midwifery is a specialized field in healthcare that focuses on supporting women throughout pregnancy, childbirth, and postpartum care.
+                        </p>
+                        <div class="collapse" id="course1-details">
+                            <p>
+                                Students in this course gain hands-on experience in providing medical assistance, emotional support, and education, ensuring the well-being of both mothers and newborns.
+                        </div>
+                        <a href="#course1-details" class="btn btn-outline-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="course1-details">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- News Item 2 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="images/agri.jpg" class="card-img-top" alt="course 2">
+                    <div class="card-body">
+                        <h5 class="card-title">AGRI BUSINESS</h5>
+                        <p class="card-text">
+                            Agribusiness blends agriculture with business principles, focusing on the management and operation of agricultural enterprises.
+                        </p>
+                        <div class="collapse" id="course2-details">
+                            <p>
+                                Students learn about farming, food production, supply chain management, and sustainability, preparing them to drive innovation and growth in the agricultural sector while meeting global food demands.
+                            </p>
+                        </div>
+                        <a href="#course2-details" class="btn btn-outline-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="news2-details">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- News Item 3 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="images/tourism.jpg" class="card-img-top" alt="course 3">
+                    <div class="card-body">
+                        <h5 class="card-title">TOURISM</h5>
+                        <p class="card-text">
+                            The Tourism course immerses students in the world of travel and tourism management.
+                        <div class="collapse" id="course3-details">
+                            <p>
+                                It covers everything from destination planning to sustainable tourism, allowing students to understand the complexities of the tourism industry and develop the skills needed to create unforgettable experiences for travelers.
+                            </p>
+                        </div>
+                        <a href="#course3-details" class="btn btn-outline-primary" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="news3-details">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Stand for Human Rights. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
